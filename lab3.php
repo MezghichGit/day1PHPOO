@@ -96,6 +96,7 @@ $e3 = new Ecole("ESPRIT","Ghazela","+789");
 $tab = array($e1,$e2,$e3);
 //var_dump($tab);
 
+//Question 5 : Affichage des données du tableau
 foreach ($tab as $e) {
     echo $e->getInfoEcole()."<br/>";
   }
