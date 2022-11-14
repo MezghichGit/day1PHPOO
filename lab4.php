@@ -11,12 +11,15 @@ class Voiture{
    // les attributs de classe
    private static $vitesseMax = 400;
    private static $nbV=0;
+   const totalMax = 10;
 
    // constructeur
 
    public function __construct($marque, $prix, $couleur)
    {
-    self::$nbV++;
+    self::$nbV++;  
+    self::$vitesseMax++;
+    //self::totalMax++;  // impossible de changer car c'est une constante
     $this->marque = $marque;
     $this->prix = $prix;
     $this->couleur = $couleur;
@@ -24,6 +27,10 @@ class Voiture{
 
    public static function getVitesseMax(){
     return self::$vitesseMax;
+   }
+
+   public static function getTotalMax(){
+    return self::totalMax;
    }
 
 
@@ -115,7 +122,7 @@ $mesVoitures = array($v1, $v2, $v3);
 
 <h2 align='center'>Mes voitures : <?php echo Voiture::getNbV()?></h2>
 
-<h3 align='center'>Vitesse Max: <?php echo Voiture::getVitesseMax()?></h3>
+<h3 align='center'><?php echo "Vitesse Max : " .Voiture::getVitesseMax()." Total voiture : ".Voiture::getTotalMax()?></h3>
 
 <table align="center" border="1">
 <tr><th>Marque</th><th>Prix</th><th>Couleur</th></tr>
