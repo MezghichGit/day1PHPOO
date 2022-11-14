@@ -6,7 +6,7 @@ class Etudiant
     public $nom;
     public $age;
 
-    public static $nbMax=20;  //attribut de la classe et non d'instance
+    private static $nbMax=20;  //attribut de la classe et non d'instance
     public static $nbEtudiant;
 
     public function __construct()  // à chaque création d'une instance, on incrémente l'attribut static de la classe
@@ -40,9 +40,14 @@ class Etudiant
         }
     }
 
-    public function infoEtudiant()
+    public function infoEtudiant() // méthode d'instance
     {
         return "Nom : ".$this->nom ." Age : ".$this->age;
+    }
+
+    public static function getNbMax()  //méthode de classe
+    {
+       return self::$nbMax;
     }
 }
 
@@ -62,6 +67,8 @@ echo $e1->infoEtudiant();
 
 echo "<br/>Nbre actuel etudiants : ".Etudiant::$nbEtudiant;
 
+
+echo "<br/>Nbre max etudiants : ".Etudiant::getNbMax();
 /*
 echo"<br/>";
 
