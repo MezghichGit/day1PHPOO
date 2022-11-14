@@ -1,4 +1,6 @@
 <?php
+
+// Questions 1 et 2 : création de la classe + getters + setters + constructeurs
 class Ecole{
     private $nom;
     private $adresse;
@@ -85,11 +87,23 @@ class Ecole{
     }
 }
 
+// Question 3 : Création des instances
+$e1 = new Ecole("ENSI","Manouba","+123");
+$e2 = new Ecole("INSAT","TUNIS","+456");
+$e3 = new Ecole("ESPRIT","Ghazela","+789");
 
-$e1 = new Ecole("Les genies","Paris","+3306060604");
+// Question 4 : création d'un tableau avec les instances
+$tab = array($e1,$e2,$e3);
+//var_dump($tab);
+
+foreach ($tab as $e) {
+    echo $e->getInfoEcole()."<br/>";
+  }
+
+/*
 //$e1->tel=10;
 echo $e1-> getInfoEcole();
 
 $e1->setNom("ENSI");
-echo $e1-> getInfoEcole();
+echo $e1-> getInfoEcole();*/
 ?>
